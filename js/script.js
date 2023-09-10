@@ -10,6 +10,8 @@ const shortcutNameInput = document.getElementById("shortcut-name");
 const shortcutList = document.getElementById("shortcut-list");
 const categoryName = document.getElementById("category-name");
 const categoryList = document.getElementById("category-list");
+const categoryFilter = document.getElementById("category-filter");
+const filterButton = document.getElementById("filter-button");
 
 const savedShortcuts = JSON.parse(localStorage.getItem("shortcuts")) || [];
 
@@ -23,11 +25,11 @@ function extractCategories(shortcuts) {
     return categories;
 }
 
-function displayShortcutsAndCategories() {
+function displayShortcutsAndCategories(shortcuts = savedShortcuts) {
     shortcutList.innerHTML = "";
     categoryList.innerHTML = "";
 
-    savedShortcuts.forEach((shortcut, index) => {
+    shortcuts.forEach((shortcut, index) => {
         const shortcutElement = document.createElement("div");
         shortcutElement.className = "shortcut";
         shortcutElement.innerHTML = `
@@ -58,6 +60,11 @@ function displayShortcutsAndCategories() {
             categoryList.appendChild(categoryElement);
         }
     });
+
+    categoryFilter.innerHTML = `
+            <option value="">All Categories</option>
+            ${extractCategories(savedShortcuts).map(category => `<option value="${category}">${category}</option>`).join('')}
+        `;
 }
 
 displayShortcutsAndCategories();
@@ -76,4 +83,15 @@ shortcutForm.addEventListener("submit", function (e) {
     shortcutUrlInput.value = "";
     shortcutNameInput.value = "";
     categoryName.value = "";
+});
+
+filterButton.addEventListener("click", function () {
+    const selectedCategory = categoryFilter.value;
+
+    if (selectedCategory === "") {
+        displayShortcutsAndCategories();
+    } else {
+        const filteredShortcuts = savedShortcuts.filter(shortcut => shortcut.category === selectedCategory);
+        displayShortcutsAndCategories(filteredShortcuts);
+    }
 });

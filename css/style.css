@@ -195,8 +195,27 @@ button:hover {
     display: block;
 }
 
-.info{
+.info {
     z-index: 99;
+}
+
+#filter-button,
+#category-filter {
+    z-index: 100;
+    position: relative;
+}
+
+#category-filter {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#category-list,
+.category{
+    margin-top: 10px;
 }
 
 /* mouse css */
