@@ -19,6 +19,10 @@ a {
     text-decoration: none;
 }
 
+a:hover{
+    color: #3e556a;
+}
+
 video {
     object-fit: cover;
     width: 100%;
@@ -239,4 +243,8 @@ button:hover {
     display: none;
     transition-duration: 500ms;
     transition-timing-function: ease-out;
+}
+
+#toggle-row-button{
+    position: relative;
 }

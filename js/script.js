@@ -95,3 +95,16 @@ filterButton.addEventListener("click", function () {
         displayShortcutsAndCategories(filteredShortcuts);
     }
 });
+
+const toggleRowButton = document.getElementById("toggle-row-button");
+const rowDiv = document.querySelector(".row");
+
+toggleRowButton.addEventListener("click", () => {
+    if (rowDiv.style.display === "flex" || rowDiv.style.display === "") {
+        rowDiv.style.display = "none";
+        toggleRowButton.textContent = "Show";
+    } else {
+        rowDiv.style.display = "flex";
+        toggleRowButton.textContent = "Hide";
+    }
+});
