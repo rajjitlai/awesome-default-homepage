@@ -2,6 +2,12 @@
 
 This project includes a captivating web application that allows users to save and organize their favorite websites. It provides the ability to add, categorize, remove, and filter saved shortcuts, all while offering an engaging video background and interactive mouse effects.
 
+## This is how it looks like
+
+<p style="align-items: center">
+   <img src="/img/view.png" alt="view">
+</p>
+
 ## Features
 
 - **Add Shortcuts:** Easily add your favorite websites by providing a name, URL, and category.
