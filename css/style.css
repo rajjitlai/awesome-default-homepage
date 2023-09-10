@@ -111,10 +111,12 @@ nav ul li a {
     font-size: 22px;
 }
 
+.content,
 .info {
     position: relative;
 }
 
+.content::before,
 .info::before {
     content: "";
     background: rgba(255, 255, 255, 0.3);
@@ -191,6 +193,10 @@ button:hover {
 
 .shortcut:hover .remove-button {
     display: block;
+}
+
+.info{
+    z-index: 99;
 }
 
 /* mouse css */
