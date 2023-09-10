@@ -19,7 +19,7 @@ a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #3e556a;
 }
 
@@ -99,6 +99,7 @@ nav ul li a {
     margin: auto;
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
     color: #fff;
     margin-top: 8%;
@@ -109,6 +110,21 @@ nav ul li a {
     align-items: center;
     margin: 15px 0;
     font-size: 18px;
+}
+
+#shortcut-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.shortcut-container {
+    width: calc(33.33% - 10px);
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
 }
 
 .content span {
@@ -218,7 +234,7 @@ button:hover {
 }
 
 #category-list,
-.category{
+.category {
     margin-top: 10px;
 }
 
@@ -245,6 +261,44 @@ button:hover {
     transition-timing-function: ease-out;
 }
 
-#toggle-row-button{
+#toggle-row-button {
     position: relative;
+}
+
+/* Responsiveness */
+@media (max-width: 1690px) {
+    .row {
+        flex-direction: column-reverse;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1280px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #shortcut-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #time-view {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    #time-view {
+        font-size: 20px;
+    }
+
+    nav ul li a,
+    input[type="text"],
+    #category-filter,
+    .row span,
+    .content span {
+        font-size: 15px;
+    }
 }
