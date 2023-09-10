@@ -108,3 +108,29 @@ toggleRowButton.addEventListener("click", () => {
         toggleRowButton.textContent = "Hide";
     }
 });
+
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
+const clearButton = document.getElementById("clear-button");
+
+searchForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const query = searchInput.value;
+    if (query) {
+        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    }
+});
+
+clearButton.addEventListener("click", function () {
+    searchInput.value = '';
+    clearButton.style.display = "none";
+});
+
+searchInput.addEventListener("input", function () {
+    if (searchInput.value) {
+        clearButton.style.display = "block";
+    } else {
+        clearButton.style.display = "none";
+    }
+});

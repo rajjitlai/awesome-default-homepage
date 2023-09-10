@@ -24,7 +24,15 @@
                 <li><a href="">Portfolio</a></li>
                 <li><a href="">Blog</a></li>
                 <li><a href="">Gmail</a></li>
-                <li><a href="">Search</a></li>
+                <li>
+                    <form id="search-form" action="https://www.google.com/search" method="GET" target="_blank">
+                        <div class="search-container">
+                            <input type="text" id="search-input" name="q" placeholder="Search">
+                            <button id="clear-button" type="button">X</button>
+                            <button id="search-button" type="submit">Search</button>
+                        </div>
+                    </form>
+                </li>
                 <li><button id="toggle-row-button">Hide</button></li>
             </ul>
         </nav>
